@@ -8,7 +8,11 @@ public class AddressBookManagement {
 		System.out.println("Welcome to address book management problem");
 		Scanner sc=new Scanner(System.in);
 		Details obj2 = new Details();
-		//add contact
+		int n = 0;
+		System.out.println("1.Add contact");
+		System.out.println("2.Edit contact");
+		n=sc.nextInt();
+		if(n==1){
 		System.out.println("Add a Contact:");
         System.out.println("Enter the First Name: ");
         String first=sc.nextLine();
@@ -32,7 +36,22 @@ public class AddressBookManagement {
         String email=sc.next();
         Contact obj1=new Contact (first,last, address, city, state, zip, phNum,email);
         obj2.addContact(obj1);
+		}
+		else if(n==2){
+			System.out.println("Enter the name to edit contact details");
+			String name =sc.next();
+			Contact con=obj2.editContactGivenName(name);
+            System.out.println("The contact is:");
+            System.out.println("First Name: "+con.getFirstName());
+            System.out.println("Last Name: "+con.getLastName());
+            System.out.println("Address: "+con.getAddress());
+            System.out.println("City: "+con.getCity());
+            System.out.println("State: "+con.getState());
+            System.out.println("Zip: "+con.getZip());
+            System.out.println("Phone No.: "+con.getPhNum());
+            System.out.println("Email: "+con.getEmail());
 
+		}
 	}
 
 }
