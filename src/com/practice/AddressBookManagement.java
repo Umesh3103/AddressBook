@@ -1,27 +1,38 @@
 package com.practice;
+import java.util.*;
 
 public class AddressBookManagement {
-	public final String firstName;
-	public final String lastName;
-	public final String address;
-	public final String city;
-	public final String state;
-	public final int zip;
-	public final long phNum;
-	public final String email;
-	public AddressBookManagement(String firstName, String lastName, String address, String city, String state, int zip, long phNum, String email){
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.address=address;
-		this.city=city;
-		this.state=state;
-		this.zip=zip;
-		this.phNum=phNum;
-		this.email=email;
-	}
+	
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to address book management problem");
-		AddressBookManagement addressBookManagement = new AddressBookManagement("Rahul", "Agarwal", "vpo kalu", "jaitaran", "raj",306302, 1234567890, "example@gmail.com");
+		Scanner sc=new Scanner(System.in);
+		Details obj2 = new Details();
+		//add contact
+		System.out.println("Add a Contact:");
+        System.out.println("Enter the First Name: ");
+        String first=sc.nextLine();
+       
+        System.out.println("Enter the Last Name: ");
+        String last=sc.nextLine();
+        
+        System.out.println("Enter the address: ");
+        String address = sc.nextLine();
+        System.out.println("Enter the city: ");
+        String city=sc.nextLine();
+        System.out.println("Enter the state: ");
+        String state=sc.nextLine();
+        System.out.println("Enter the zip: ");
+        int zip=sc.nextInt();
+        
+        System.out.println("Enter phone number: ");
+        long phNum=sc.nextLong();
+        
+        System.out.println("Enter the Email: ");
+        String email=sc.next();
+        Contact obj1=new Contact (first,last, address, city, state, zip, phNum,email);
+        obj2.addContact(obj1);
+
 	}
 
 }
